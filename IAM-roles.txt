@@ -1,0 +1,3 @@
+Name:       data-lake-week-2
+Service:    Lambda
+Policies:   AmazonS3FullAccess, AmazonESFullAccess
