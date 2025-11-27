@@ -1,0 +1,22 @@
+{
+    "Version":"2012-10-17",		 	 	 
+    "Id": "example-ID",
+    "Statement": [
+        {
+            "Sid": "example-statement-ID",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "s3.amazonaws.com"
+            },
+            "Action": [
+                "SQS:SendMessage"
+            ],
+            "Resource": "arn:aws:sqs:us-east-1:892211253145:SQS_NAME",
+            "Condition": {
+                "ArnLike": {
+                    "aws:SourceArn": "arn:aws:s3:*:*:S3_BUCKET_NAME"
+                }
+            }
+        }
+    ]
+}

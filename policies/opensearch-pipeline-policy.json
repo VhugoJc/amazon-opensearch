@@ -1,0 +1,28 @@
+{
+  "Version":"2012-10-17",		 	 	 
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action":[
+          "s3:ListBucket",
+          "s3:GetBucketLocation",
+          "s3:GetObject"
+       ],
+      "Resource": "arn:aws:s3:::amzn-s3-demo-bucket/*"
+    },
+    {
+       "Effect":"Allow",
+       "Action":"s3:ListAllMyBuckets",
+       "Resource":"arn:aws:s3:::*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:DeleteMessage",
+        "sqs:ReceiveMessage",
+        "sqs:ChangeMessageVisibility"
+      ],
+      "Resource": "arn:aws:sqs:us-east-1:111122223333:MyS3EventSqsQueue"
+    }
+  ]
+}
